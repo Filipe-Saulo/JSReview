@@ -201,3 +201,20 @@ summary;
 const pagesRange = pages > 1000 ? "over a thousand" : "less than one 1000";
 pagesRange;
 console.log(`The book has ${pagesRange} pages`);
+//operadores logicos
+console.log(true && "Some string");
+console.log(false && "Some string");
+console.log(hasMovieAdaptation && "This book has a movie");
+//valores considerados falsos: 0, '', null, undefined, false
+console.log(0 && "Some string");
+//o contrario tambem ocorre, quando o primeiro operador é true, retornará apenas ele
+console.log(false || "Some string");
+
+const spanishTranslation = book.translations.spanish || "Não traduzido";
+
+spanishTranslation;
+
+// esse operador ?? só funcionará quando o primeiro valor for nulo ou indefinido
+const count = book.reviews.librarything.reviewsCount ?? "sem dados";
+
+count;
