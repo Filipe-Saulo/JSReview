@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(2);
+const book = getBook(3);
 
 book;
 //reestruturacao de objetos abaixo
@@ -214,7 +214,16 @@ const spanishTranslation = book.translations.spanish || "Não traduzido";
 
 spanishTranslation;
 
+//operador ? após librarything indica que pode aceitar valores nulos
 // esse operador ?? só funcionará quando o primeiro valor for nulo ou indefinido
-const count = book.reviews.librarything.reviewsCount ?? "sem dados";
+const count = book.reviews.librarything?.reviewsCount ?? "sem dados";
 
 count;
+
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  //operador ? após librarything indica que pode aceitar valores nulos
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0;
+  return goodreads + librarything;
+}
+console.log(getTotalReviewCount(book));
