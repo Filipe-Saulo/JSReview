@@ -143,7 +143,7 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const book = getBook(1);
+const book = getBook(2);
 
 book;
 //reestruturacao de objetos abaixo
@@ -177,7 +177,13 @@ const updatedBook = {
 };
 updatedBook;
 
-const summary = `${title}, ${pages}-page long book, was written by ${author} and published in 
-${publicationDate.split("-")[0]}`;
-
+//fazendo modificacoes utilizando `` e ${} para chamar o JS
+const summary = `${title}, ${pages}-page long book, was written by ${author} and published in ${
+  publicationDate.split("-")[0]
+}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
+
+//operador ternario
+const pagesRange = pages > 1000 ? "over a thousand" : "less than one 1000";
+pagesRange;
+console.log(`The book has ${pagesRange} pages`);
