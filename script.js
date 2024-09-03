@@ -177,10 +177,24 @@ const updatedBook = {
 };
 updatedBook;
 
+//sobre funcoes
+//funcao padrao abaixo
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+//funcao arrow 1 linha de execucao abaixo
+// const getYear = (str) => str.split("-")[0];
+// funcao arrow varias linhas de execucao abaixo
+const getYear = (str) => {
+  //mais codigo aqui
+  return str.split("-")[0];
+};
+console.log(getYear(publicationDate));
+
 //fazendo modificacoes utilizando `` e ${} para chamar o JS
-const summary = `${title}, ${pages}-page long book, was written by ${author} and published in ${
-  publicationDate.split("-")[0]
-}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
+const summary = `${title}, ${pages}-page long book, was written by ${author} and published in ${getYear(
+  publicationDate
+)}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
 
 //operador ternario
