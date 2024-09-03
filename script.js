@@ -143,4 +143,40 @@ function getBook(id) {
   return data.find((d) => d.id === id);
 }
 
-const books = getBooks();
+const book = getBook(1);
+
+book;
+//reestruturacao de objetos abaixo
+// const title = book.title;
+// const author = book.author;
+// const etc etc etc = etc etc;
+// const n = n.n;
+//abaixo basta definir exatamente o mesmo nome que esta dentro de "book" que ira aparecer
+const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+  book;
+
+console.log(author, title, genres);
+
+// const primaryGenre = genres[0];
+// const secondaryGenre = genres[1];
+const [primaryGenre, secondaryGenre, ...otherGenres] = genres;
+
+console.log(primaryGenre, secondaryGenre, otherGenres);
+
+//adicionar um elemento a array - operador spread(os 3 pontos ... para nao separar em 1 array e 1 elemento separado)
+
+const newGenres = [...genres, "epic fantasy"];
+newGenres;
+
+const updatedBook = {
+  ...book,
+  //adicionando uma nova propriedade
+  moviePublicationDate: "2001-12-19",
+  //substituir uma propriedade existente
+  pages: 1210,
+};
+updatedBook;
+
+const summary = `${title}, ${pages}-page long book, was written by ${author} and published in ${publicationDate}`;
+
+summary;
