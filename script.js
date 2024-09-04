@@ -254,3 +254,6 @@ const adventureBooks = books
   .map((book) => book.title);
 
 adventureBooks;
+//metodo reduzido(exemplo abaixo, se quisermos ler todos os livros, quantas paginas teriamos que ler)
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
+pagesAllBooks;
