@@ -257,3 +257,11 @@ adventureBooks;
 //metodo reduzido(exemplo abaixo, se quisermos ler todos os livros, quantas paginas teriamos que ler)
 const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
 pagesAllBooks;
+//metodo sort(usado para classificar uma matriz)
+const arr = [3, 7, 1, 9, 6];
+// const sorted = arr.sort((a, b) => a - b);
+const sorted = arr.slice().sort((a, b) => b - a);
+sorted;
+arr;
+const sortedByPages = books.slice().sort((a, b) => b.pages + a.pages);
+sortedByPages;
