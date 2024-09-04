@@ -1,3 +1,4 @@
+//ATENCAO - Utilizar VSCode extensão Quokka.js - ativar extensao: >quokka.js: Start on Current file
 const data = [
   {
     id: 1,
@@ -142,7 +143,7 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
-/*
+
 const book = getBook(3);
 
 book;
@@ -227,7 +228,7 @@ function getTotalReviewCount(book) {
   return goodreads + librarything;
 }
 console.log(getTotalReviewCount(book));
-*/
+
 const books = getBooks();
 books;
 //arrays
@@ -265,3 +266,22 @@ sorted;
 arr;
 const sortedByPages = books.slice().sort((a, b) => b.pages + a.pages);
 sortedByPages;
+//01-adicionar, 02-excluir e 03-editar elementos em um array sem alterar o array original
+//01 - adicionar um objeto book ao array
+const newBook = {
+  id: 6,
+  title: "Harry potter and the Chamber of Secrets",
+  author: "J.K Rowling",
+};
+const booksAfterAdd = [...books, newBook];
+booksAfterAdd;
+//02-excluir um objeto book do array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id != 3);
+booksAfterDelete;
+//03-editar um objeto book do array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id == 1 ? { ...book, pages: 1210 } : book
+);
+booksAfterUpdate;
+
+//ATENCAO - Utilizar VSCode extensão Quokka.js - ativar extensao: >quokka.js: Start on Current file
